@@ -1,0 +1,32 @@
+{
+  "subHeaderCategories": [
+    {
+      "categoryId": "VEG_FRUITS",
+      "categoryName": "Vegetbales and Fruits"
+    },
+    {
+      "categoryId": "DAIRY_BREAKFAST",
+      "categoryName": "Dairy and Breakfast"
+    },
+    {
+      "categoryId": "MUNCHIES",
+      "categoryName": "Munchies"
+    },
+    {
+      "categoryId": "COLD_DRINKS",
+      "categoryName": "Cold Drinks"
+    },
+    {
+      "categoryId": "INSTANT_FROZEN_FOOD",
+      "categoryName": "Instant & Frozen Food"
+    },
+    {
+      "categoryId": "TEA_COFFEE_HEALTH_DRINKS",
+      "categoryName": "Tea, Coffee & Health Drinks"
+    },
+    {
+      "categoryId": "BAKERY_BISCUITS",
+      "categoryName": "Bakery & Biscuits"
+    }
+  ]
+}
