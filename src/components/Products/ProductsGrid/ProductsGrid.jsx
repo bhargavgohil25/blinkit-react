@@ -7,22 +7,20 @@ const ProductsGrid = ({
   cart,
 }) => {
   return (
-    <>
-      <div className="products">
-        {products &&
-          products.map((product) => {
-            return (
-              <ProductCard
-                productCount={cart[product.productId]?.productCount || 0}
-                key={product.productId}
-                product={product}
-                addClickHandler={addClickHandler}
-                removeClickHandler={removeClickHandler}
-              />
-            );
-          })}
-      </div>
-    </>
+    <div className="products">
+      {products.length > 0 &&
+        products.map((product) => {
+          return (
+            <ProductCard
+              productCount={cart[product.productId]?.productCount || 0}
+              key={product.productId}
+              product={product}
+              addClickHandler={addClickHandler}
+              removeClickHandler={removeClickHandler}
+            />
+          );
+        })}
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import "./SideNavItem.style.css";
 
 const SideNavItem = ({
@@ -7,20 +8,22 @@ const SideNavItem = ({
   categoryImg,
   selectedCategory,
 }) => {
+  const handleClick = useCallback(() => handleSideNavClick(categoryId), []);
+
   return (
-    <li
+    <div
       className={
         selectedCategory === categoryId
           ? "nav__item nav__item--active"
           : "nav__item"
       }
-      onClick={() => handleSideNavClick(categoryId)}
+      onClick={handleClick}
     >
       <div className="side__nav__icon">
-        <img src={categoryImg} alt={categoryName} className="nav__item--img" />
+        <img src={categoryImg} alt={categoryName} />
       </div>
       <div className="nav__item--name">{categoryName}</div>
-    </li>
+    </div>
   );
 };
 

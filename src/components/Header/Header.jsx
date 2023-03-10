@@ -7,17 +7,15 @@ import SearchBar from "./SearchBar/SearchBar";
 
 const Header = ({ cartDetail }) => {
   return (
-    <>
-      <header className="header">
-        <Logo />
-        <Delivery />
-        <SearchBar />
-        <div className="header--right">
-          <div className="login--button">Login</div>
-          <Cart cartDetail={cartDetail} />
-        </div>
-      </header>
-    </>
+    <header className="header">
+      <Logo />
+      <Delivery />
+      <SearchBar />
+      <div className="header--right">
+        <div className="login--button">Login</div>
+        <Cart cartDetail={cartDetail} />
+      </div>
+    </header>
   );
 };
 

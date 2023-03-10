@@ -13,26 +13,22 @@
   cursor: pointer;
 }
 
-.nav__item__icon {
+.side__nav__icon {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1 2 auto;
-  overflow: hidden;
+  height: 2rem;
+  width: 2rem;
 }
 
-.nav__item--img {
+.side__nav__icon img {
   border-radius: 10%;
   width: 6.5rem;
   height: 6.5rem;
-  padding-top: 1rem;
   transform: scale(0.9);
   transition: all 0.3s ease-in;
-}
-
-.nav__item--img img {
-  max-width: 100%; 
-  height: auto;
+  overflow: hidden;
 }
 
 .nav__item--name {
@@ -52,4 +48,5 @@
 .nav__item--active img {
   transform: scale(0.98);
   transition: all 0.3s ease-out;
+  overflow: hidden;
 }

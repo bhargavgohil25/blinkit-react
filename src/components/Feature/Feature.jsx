@@ -5,14 +5,12 @@ import { memo } from "react";
 
 const Feature = () => {
   return (
-    <>
-      <div className="feature__container">
-        {promiseCardData &&
-          promiseCardData.map((cardData) => {
-            return <PromiseCard key={cardData.id} cardData={cardData} />;
-          })}
-      </div>
-    </>
+    <div className="feature__container">
+      {promiseCardData.length > 0 &&
+        promiseCardData.map((cardData) => {
+          return <PromiseCard key={cardData.id} cardData={cardData} />;
+        })}
+    </div>
   );
 };
 

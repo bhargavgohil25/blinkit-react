@@ -7,7 +7,7 @@ const Delivery = () => {
   const [location, setLocation] = useState("Delhi, India");
 
   const getLocation = useCallback((location) => {
-    if(!location) return;
+    if (!location) return;
     setLocation(location);
   }, []);
 

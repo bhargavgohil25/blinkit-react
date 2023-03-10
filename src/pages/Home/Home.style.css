@@ -1,13 +1,8 @@
 main {
-  margin-top: 15rem;
-  height: 100%;
-}
-
-/* products */
-.product_wrapper {
   display: flex;
   justify-content: center;
-  height: 90rem;
+  margin-top: 15rem;
+  height: 100%;
 }
 
 .product_container {

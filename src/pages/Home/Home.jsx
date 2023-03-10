@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import fetchJsonData from "../../api";
 import "./Home.style.css";
 import Feature from "../../components/Feature/Feature";
@@ -7,6 +7,12 @@ import Header from "../../components/Header/Header";
 import Products from "../../components/Products/Products";
 import SideNavBar from "../../components/SideNavBar/SideNavBar";
 import SubHeader from "../../components/SubHeader/SubHeader";
+import {
+  addToCart,
+  calculateCartDetails,
+  getFilteredProducts,
+  removeFromCart,
+} from "../../utilities";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -23,97 +29,46 @@ const Home = () => {
       const { sideNavCategories: categories } = await fetchJsonData(
         "/data/sideNavCategories.json"
       );
+      const { products } = await fetchJsonData("/data/products.json");
+      setProducts(products);
       setCategories(categories);
     };
 
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { products } = await fetchJsonData("/data/products.json");
-      const reqProducts = products.filter(
-        (product) => product.categoryId === selectedCategory
-      );
-      setProducts(reqProducts);
-    };
-
-    fetchData();
-  }, [selectedCategory]);
-
-  useEffect(() => {
-    calculateCartDetails();
-  }, [cart]);
-
-  const calculateCartDetails = () => {
-    let totalCartCost = 0;
-    for (let productId in cart) {
-      const product = products.find(
-        (product) => product.productId === parseInt(productId)
-      );
-      totalCartCost += cart[productId].productCount * product.discountedPrice;
-    }
-
-    const cartQuantity = Object.keys(cart).reduce((acc, productId) => {
-      return acc + cart[productId].productCount;
-    }, 0);
-
-    setCartDetail({ cartQuantity, totalCartCost });
-  };
+  const filteredProducts = useMemo(
+    () => getFilteredProducts(products, selectedCategory),
+    [products, selectedCategory]
+  );
 
   const handleSideNavClick = useCallback((categoryId) => {
     setSelectedCategory(categoryId);
   }, []);
 
-  // Function to add a product to the cart
-  const addProductToCart = useCallback((productId) => {
+  const addProductToCart = (productId) => {
     setCart((prevCart) => {
-      // Check if the product is already in the cart
-      if (prevCart[productId]) {
-        // If it is, update the count of the product
-        return {
-          ...prevCart,
-          [productId]: {
-            productCount: prevCart[productId].productCount + 1,
-          },
-        };
-      } else {
-        // If it's not, add the product to the cart with a count of 1
-        return {
-          ...prevCart,
-          [productId]: {
-            productCount: 1,
-          },
-        };
-      }
+      const newCart = addToCart(prevCart, productId);
+      const { cartQuantity, totalCartCost } = calculateCartDetails(
+        newCart,
+        products
+      );
+      setCartDetail({ cartQuantity, totalCartCost });
+      return newCart;
     });
-  }, []);
+  };
 
-  const removeProductFromCart = useCallback((productId) => {
+  const removeProductFromCart = (productId) => {
     setCart((prevCart) => {
-      // Check if the product is in the cart
-      if (prevCart[productId]) {
-        // If it is, check if the count is greater than 1
-        if (prevCart[productId].productCount > 1) {
-          // If it is, decrease the count of the product
-          return {
-            ...prevCart,
-            [productId]: {
-              productCount: prevCart[productId].productCount - 1,
-            },
-          };
-        } else {
-          // If the count is 1, remove the product from the cart
-          const newCart = { ...prevCart };
-          delete newCart[productId];
-          return newCart;
-        }
-      } else {
-        // If the product is not in the cart, return the previous cart state
-        return prevCart;
-      }
+      const newCart = removeFromCart(prevCart, productId);
+      const { cartQuantity, totalCartCost } = calculateCartDetails(
+        newCart,
+        products
+      );
+      setCartDetail({ cartQuantity, totalCartCost });
+      return newCart;
     });
-  }, []);
+  };
 
   return (
     <>
@@ -122,20 +77,18 @@ const Home = () => {
         <SubHeader />
       </div>
       <main className="main">
-        <div className="product_wrapper">
-          <div className="product_container">
-            <SideNavBar
-              categories={categories}
-              handleSideNavClick={handleSideNavClick}
-              selectedCategory={selectedCategory}
-            />
-            <Products
-              products={products}
-              addClickHandler={addProductToCart}
-              removeClickHandler={removeProductFromCart}
-              cart={cart}
-            />
-          </div>
+        <div className="product_container">
+          <SideNavBar
+            categories={categories}
+            handleSideNavClick={handleSideNavClick}
+            selectedCategory={selectedCategory}
+          />
+          <Products
+            products={filteredProducts}
+            addClickHandler={addProductToCart}
+            removeClickHandler={removeProductFromCart}
+            cart={cart}
+          />
         </div>
       </main>
       <Feature />
