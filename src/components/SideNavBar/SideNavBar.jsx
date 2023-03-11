@@ -1,5 +1,6 @@
 import SideNavItem from "./SideNavItem/SideNavItem";
 import "./SideNavBar.style.css";
+import PropTypes from "prop-types";
 import { memo } from "react";
 
 const SideNavBar = ({ categories, handleSideNavClick, selectedCategory }) => {
@@ -20,6 +21,12 @@ const SideNavBar = ({ categories, handleSideNavClick, selectedCategory }) => {
         })}
     </div>
   );
+};
+
+SideNavBar.propTypes = {
+  categories: PropTypes.array.isRequired,
+  handleSideNavClick: PropTypes.func.isRequired,
+  selectedCategory: PropTypes.string.isRequired,
 };
 
 export default memo(SideNavBar);

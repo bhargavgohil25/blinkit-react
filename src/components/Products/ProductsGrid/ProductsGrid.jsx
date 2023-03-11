@@ -1,5 +1,7 @@
 import ProductCard from "../ProductCard/ProductCard";
 import "./ProductsGrid.style.css";
+import PropTypes from "prop-types";
+
 const ProductsGrid = ({
   products,
   addClickHandler,
@@ -22,6 +24,16 @@ const ProductsGrid = ({
         })}
     </div>
   );
+};
+
+ProductsGrid.propTypes = {
+  products: PropTypes.array.isRequired,
+  addClickHandler: PropTypes.func.isRequired,
+  removeClickHandler: PropTypes.func.isRequired,
+  cart: PropTypes.shape({
+    cartQuantity: PropTypes.number,
+    totalCartCost: PropTypes.number,
+  }),
 };
 
 export default ProductsGrid;

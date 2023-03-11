@@ -1,8 +1,8 @@
-import { useCallback } from "react";
 import minusIcon from "../../../assets/images/minus-3108.svg";
 import plusIcon from "../../../assets/images/plus-3107.svg";
 import sourceAtIcon from "../../../assets/images/sourced-icon.webp";
 import "./ProductCard.style.css";
+import PropTypes from "prop-types";
 
 const ProductCard = ({
   product,
@@ -65,6 +65,23 @@ const ProductCard = ({
       </div>
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    productId: PropTypes.number,
+    productName: PropTypes.string,
+    actualPrice: PropTypes.number,
+    discountedPrice: PropTypes.number,
+    discount: PropTypes.number,
+    imgSrc: PropTypes.string,
+    offPercentage: PropTypes.number,
+    quantity: PropTypes.string,
+    categoryId: PropTypes.string,
+  }).isRequired,
+  addClickHandler: PropTypes.func.isRequired,
+  removeClickHandler: PropTypes.func.isRequired,
+  productCount: PropTypes.number,
 };
 
 export default ProductCard;

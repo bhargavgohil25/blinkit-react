@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import "./SideNavItem.style.css";
+import PropTypes from "prop-types";
 
 const SideNavItem = ({
   handleSideNavClick,
@@ -25,6 +26,14 @@ const SideNavItem = ({
       <div className="nav__item--name">{categoryName}</div>
     </div>
   );
+};
+
+SideNavItem.propTypes = {
+  handleSideNavClick: PropTypes.func.isRequired,
+  categoryId: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
+  categoryImg: PropTypes.string,
+  selectedCategory: PropTypes.string.isRequired,
 };
 
 export default SideNavItem;

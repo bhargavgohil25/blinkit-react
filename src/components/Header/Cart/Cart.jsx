@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import cartIcon from "../../../assets/images/cart.svg";
 import "./Cart.style.css";
+import PropTypes from "prop-types";
 
 const Cart = ({ cartDetail }) => {
   const { cartQuantity, totalCartCost } = cartDetail;
@@ -31,4 +32,17 @@ const Cart = ({ cartDetail }) => {
   );
 };
 
+Cart.propTypes = {
+  cartDetail: PropTypes.shape({
+    cartQuantity: PropTypes.number,
+    totalCartCost: PropTypes.number,
+  }),
+};
+
+Cart.defaultProps = {
+  cartDetail: {
+    cartQuantity: 0,
+    totalCartCost: 0,
+  },
+};
 export default Cart;

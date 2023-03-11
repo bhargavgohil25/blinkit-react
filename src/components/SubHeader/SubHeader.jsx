@@ -10,7 +10,7 @@ const SubHeader = () => {
       const data = await fetchJsonData("/data/subHeaderCategories.json");
       setCategories(data.subHeaderCategories);
     };
- 
+
     fetchData();
   }, []);
 
