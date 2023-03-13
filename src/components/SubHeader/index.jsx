@@ -1,25 +1,14 @@
-import { memo, useEffect, useState } from "react";
+import { memo } from "react";
 import "./SubHeader.style.css";
-import fetchJsonData from "../../api";
 
-const SubHeader = () => {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchJsonData("/data/subHeaderCategories.json");
-      setCategories(data.subHeaderCategories);
-    };
-
-    fetchData();
-  }, []);
-
+const SubHeader = ({ subHeaderCategories }) => {
+  console.log("SubHeader rendered");
   return (
     <>
       <div className="sub-header">
         <div className="sub-header__category">
-          {categories &&
-            categories.map((category) => {
+          {subHeaderCategories.length > 0 &&
+            subHeaderCategories.map((category) => {
               return (
                 <li
                   className="sub-header__category--item"

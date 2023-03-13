@@ -1,5 +1,5 @@
 import { promiseCardData } from "../../assets/constants";
-import PromiseCard from "./PromiseCard/PromiseCard";
+import PromiseCard from "./PromiseCard";
 import "./Feature.style.css";
 import { memo } from "react";
 

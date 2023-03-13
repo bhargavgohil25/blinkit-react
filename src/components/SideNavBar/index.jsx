@@ -1,4 +1,4 @@
-import SideNavItem from "./SideNavItem/SideNavItem";
+import SideNavItem from "./SideNavItem";
 import "./SideNavBar.style.css";
 import PropTypes from "prop-types";
 import { memo } from "react";

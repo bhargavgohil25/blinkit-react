@@ -1,4 +1,4 @@
-import ProductsGrid from "./ProductsGrid/ProductsGrid";
+import ProductsGrid from "./ProductsGrid";
 import "./Products.style.css";
 import PropTypes from "prop-types";
 

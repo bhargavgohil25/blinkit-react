@@ -1,4 +1,4 @@
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "../ProductCard";
 import "./ProductsGrid.style.css";
 import PropTypes from "prop-types";
 

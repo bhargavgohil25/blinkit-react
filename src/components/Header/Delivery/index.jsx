@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import "./Delivery.style.css";
-import LocationModal from "./LocationModal/LocationModal";
+import LocationModal from "./LocationModal";
 
 const Delivery = () => {
   const [locationModalOpen, setLocationModalOpen] = useState(false);

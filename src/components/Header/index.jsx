@@ -1,9 +1,9 @@
 import "./Header.style.css";
-import Logo from "./Logo/Logo";
-import Delivery from "./Delivery/Delivery";
-import Cart from "./Cart/Cart";
+import Logo from "./Logo";
+import Delivery from "./Delivery";
+import Cart from "./Cart";
 import { memo } from "react";
-import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "./SearchBar";
 import PropTypes from "prop-types";
 
 const Header = ({ cartDetail }) => {

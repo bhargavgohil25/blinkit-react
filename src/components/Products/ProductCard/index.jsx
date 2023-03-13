@@ -3,6 +3,7 @@ import plusIcon from "../../../assets/images/plus-3107.svg";
 import sourceAtIcon from "../../../assets/images/sourced-icon.webp";
 import "./ProductCard.style.css";
 import PropTypes from "prop-types";
+import { useCallback } from "react";
 
 const ProductCard = ({
   product,
@@ -19,6 +20,14 @@ const ProductCard = ({
     discountedPrice,
     actualPrice,
   } = product;
+
+  const handleAddClick = useCallback(() => {
+    addClickHandler(productId);
+  }, [addClickHandler, productId]);
+
+  const handleRemoveClick = useCallback(() => {
+    removeClickHandler(productId);
+  }, [removeClickHandler, productId]);
 
   return (
     <div className="product__card">
@@ -41,22 +50,16 @@ const ProductCard = ({
         </div>
         <div className="product__add">
           {productCount === 0 ? (
-            <div className="add_btn" onClick={() => addClickHandler(productId)}>
+            <div className="add_btn" onClick={handleAddClick}>
               ADD
             </div>
           ) : (
             <div className="product_added">
-              <button
-                className="icon minus"
-                onClick={() => removeClickHandler(productId)}
-              >
+              <button className="icon minus" onClick={handleRemoveClick}>
                 <img src={minusIcon} alt="minus-icon" />
               </button>
               <div className="product-quantity">{productCount}</div>
-              <button
-                className="icon plus"
-                onClick={() => addClickHandler(productId)}
-              >
+              <button className="icon plus" onClick={handleAddClick}>
                 <img src={plusIcon} alt="plus-icon" />
               </button>
             </div>

@@ -9,7 +9,10 @@ const SideNavItem = ({
   categoryImg,
   selectedCategory,
 }) => {
-  const handleClick = useCallback(() => handleSideNavClick(categoryId), []);
+  const handleClick = useCallback(
+    () => handleSideNavClick(categoryId),
+    [handleSideNavClick, categoryId]
+  );
 
   return (
     <div

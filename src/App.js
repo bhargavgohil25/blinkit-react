@@ -1,6 +1,6 @@
 import "./App.css";
-import Home from "./pages/Home/Home";
-import Checkout from "./pages/Checkout/Checkout";
+import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
