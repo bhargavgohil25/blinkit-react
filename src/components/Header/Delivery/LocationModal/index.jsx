@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "./LocationModal.style.css";
 
 const LocationModal = ({ setLocationModalOpen, getLocation }) => {
   const [location, setLocation] = useState("");
+
+  const handleChange = useCallback((e) => {
+    setLocation(e.target.value);
+  }, []);
 
   return (
     <>
@@ -25,7 +29,7 @@ const LocationModal = ({ setLocationModalOpen, getLocation }) => {
           <div className="location__input">
             <input
               type="text"
-              onChange={(e) => setLocation(e.target.value)}
+              onChange={handleChange}
               placeholder="Type your city Society/Colony/Appartment"
             />
           </div>
