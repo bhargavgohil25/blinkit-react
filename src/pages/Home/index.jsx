@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./Home.style.css";
 import Feature from "../../components/Feature";
 import Footer from "../../components/Footer";
@@ -9,20 +9,20 @@ import SubHeader from "../../components/SubHeader";
 import { useActions } from "../../hooks/useActions";
 
 const Home = () => {
-  const [subHeaderCategories, setSubHeaderCategories] = useState([]);
-
-  const { fetchProducts, fetchSideNavCategories } = useActions();
+  const { fetchProducts, fetchSideNavCategories, fetchSubHeaderCategories } =
+    useActions();
 
   useEffect(() => {
     fetchProducts();
     fetchSideNavCategories();
+    fetchSubHeaderCategories();
   }, []);
 
   return (
     <>
       <div className="top">
         <Header />
-        <SubHeader subHeaderCategories={subHeaderCategories} />
+        <SubHeader />
       </div>
       <main className="main">
         <div className="product_container">

@@ -41,3 +41,11 @@ export const removeProductFromCart = (productId) => {
 };
 
 /* Action Creators for sub-header categories */
+export const subHeaderCategoriesLoading = () => ({
+  type: ActionType.SUB_HEADER_CATEGORIES_LOADING,
+});
+
+export const subHeaderCategoriesLoaded = (categories) => ({
+  type: ActionType.SUB_HEADER_CATEGORIES_LOADED,
+  payload: categories,
+});

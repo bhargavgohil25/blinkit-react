@@ -1,7 +1,11 @@
 import { memo } from "react";
 import "./SubHeader.style.css";
+import { useSelector } from "react-redux";
+import { selectSubHeaderCategories } from "../../state/reducers/subHeaderReducer";
 
-const SubHeader = ({ subHeaderCategories }) => {
+const SubHeader = () => {
+  const subHeaderCategories = useSelector(selectSubHeaderCategories);
+
   return (
     <div className="sub-header">
       <div className="sub-header__category">

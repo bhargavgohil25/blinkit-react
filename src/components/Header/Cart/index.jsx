@@ -8,7 +8,6 @@ import {
 } from "../../../state/reducers/cartsReducer";
 
 const Cart = () => {
-  // const { cartQuantity, totalCartCost } = cartDetail;
   const totalCartCost = useSelector((state) => selectCartTotalCost(state));
   const cartQuantity = useSelector((state) =>
     selectCartTotalProductCount(state)

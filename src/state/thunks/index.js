@@ -3,6 +3,8 @@ import {
   productsLoading,
   sideNavCategoriesLoaded,
   sideNavCategoriesLoading,
+  subHeaderCategoriesLoaded,
+  subHeaderCategoriesLoading,
 } from "../action-creators";
 import fetchJsonData from "../../api";
 
@@ -18,4 +20,12 @@ export const fetchSideNavCategories = () => async (dispatch) => {
     "/data/sideNavCategories.json"
   );
   dispatch(sideNavCategoriesLoaded(categories));
+};
+
+export const fetchSubHeaderCategories = () => async (dispatch) => {
+  dispatch(subHeaderCategoriesLoading());
+  const { subHeaderCategories: categories } = await fetchJsonData(
+    "/data/subHeaderCategories.json"
+  );
+  dispatch(subHeaderCategoriesLoaded(categories));
 };

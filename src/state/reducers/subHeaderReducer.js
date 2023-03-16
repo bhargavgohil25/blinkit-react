@@ -6,7 +6,10 @@ const initialState = {
   entities: {},
 };
 
-export default function productsReducer(state = initialState, action) {
+export default function subHeaderCategoriesReducer(
+  state = initialState,
+  action
+) {
   switch (action.type) {
     case ActionType.SUB_HEADER_CATEGORIES_LOADED: {
       const newSubHeaderCategories = {};
@@ -32,23 +35,12 @@ export default function productsReducer(state = initialState, action) {
   }
 }
 
-const selectProductsEntities = (state) => state.products.entities;
+const selectSubHeaderCategoriesEntities = (state) =>
+  state.subHeaderCategories.entities;
 
-export const selectProducts = createSelector(
+export const selectSubHeaderCategories = createSelector(
   // input selector
-  selectProductsEntities,
+  selectSubHeaderCategoriesEntities,
   // output selector
   (entities) => Object.values(entities)
 );
-
-export const selectProductById = (state, productId) => {
-  return selectProductsEntities(state)[productId];
-};
-
-// select all products of a categoryId
-export const selectProductsIdByCategoryId = (state, categoryId) => {
-  const products = selectProducts(state);
-  return products
-    .filter((product) => product.categoryId === categoryId)
-    .map((product) => product.productId);
-};
