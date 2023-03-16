@@ -1,0 +1,26 @@
+/* Delivery container */
+.delivery-container {
+  display: flex;
+  flex: 1 2 10%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.delivery-container:hover {
+  background-color: rgba(235, 232, 232, 0.116);
+  cursor: pointer;
+}
+
+.delivery__duration {
+  margin-left: 8rem;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.delivery__location {
+  margin-left: 8rem;
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
