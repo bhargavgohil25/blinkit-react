@@ -8,14 +8,14 @@ const ProductsGrid = () => {
   const currentCategoryId = useSelector((state) =>
     selectCurrentSideNavCategoryId(state)
   );
-  const productsIds = useSelector((state) =>
+  const productIds = useSelector((state) =>
     selectProductsIdByCategoryId(state, currentCategoryId)
   );
 
   return (
     <div className="products">
-      {productsIds.length > 0 &&
-        productsIds.map((productId) => {
+      {productIds.length > 0 &&
+        productIds.map((productId) => {
           return <ProductCard productId={productId} key={productId} />;
         })}
     </div>

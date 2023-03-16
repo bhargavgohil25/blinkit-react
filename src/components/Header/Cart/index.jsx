@@ -27,7 +27,9 @@ const Cart = () => {
         <div className="cart__detail">
           {cartQuantity > 0 ? (
             <div>
-              <div>{cartQuantity} items</div>
+              <div>
+                {cartQuantity} item{cartQuantity === 1 ? "" : "s"}
+              </div>
               <div>₹{totalCartCost}</div>
             </div>
           ) : (
