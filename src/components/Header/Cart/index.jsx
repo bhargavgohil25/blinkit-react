@@ -32,16 +32,12 @@ const Cart = ({ cartQuantity, totalCartCost }) => {
 };
 
 Cart.propTypes = {
-  cartDetail: PropTypes.shape({
-    cartQuantity: PropTypes.number,
-    totalCartCost: PropTypes.number,
-  }),
+  cartQuantity: PropTypes.number,
+  totalCartCost: PropTypes.number,
 };
 
 Cart.defaultProps = {
-  cartDetail: {
-    cartQuantity: 0,
-    totalCartCost: 0,
-  },
+  cartQuantity: 0,
+  totalCartCost: 0,
 };
 export default Cart;

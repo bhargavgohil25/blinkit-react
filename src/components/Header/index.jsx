@@ -20,17 +20,13 @@ const Header = ({ cartQuantity, totalCartCost }) => {
   );
 };
 
-// Header.propTypes = {
-//   cartDetail: PropTypes.shape({
-//     cartQuantity: PropTypes.number,
-//     totalCartCost: PropTypes.number,
-//   }),
-// };
+Header.propTypes = {
+  cartQuantity: PropTypes.number,
+  totalCartCost: PropTypes.number,
+};
 
-// Header.defaultProps = {
-//   cartDetail: {
-//     cartQuantity: 0,
-//     totalCartCost: 0,
-//   },
-// };
+Header.defaultProps = {
+  cartQuantity: 0,
+  totalCartCost: 0,
+};
 export default memo(Header);
