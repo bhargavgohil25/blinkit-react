@@ -20,10 +20,6 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [subHeaderCategories, setSubHeaderCategories] = useState([]);
   const [cart, setCart] = useState({});
-  const [cartDetail, setCartDetail] = useState({
-    cartQuantity: 0,
-    totalCartCost: 0,
-  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,34 +47,28 @@ const Home = () => {
     setSelectedCategory(categoryId);
   }, []);
 
-  const addProductToCart = (productId) => {
-    setCart((prevCart) => {
-      const newCart = addToCart(prevCart, productId);
-      const { cartQuantity, totalCartCost } = calculateCartDetails(
-        newCart,
-        products
-      );
-      setCartDetail({ cartQuantity, totalCartCost });
-      return newCart;
-    });
-  };
+  const addProductToCart = useCallback(
+    (productId) => {
+      const newCart = addToCart(cart, productId);
+      setCart(newCart);
+    },
+    [cart]
+  );
 
-  const removeProductFromCart = (productId) => {
-    setCart((prevCart) => {
-      const newCart = removeFromCart(prevCart, productId);
-      const { cartQuantity, totalCartCost } = calculateCartDetails(
-        newCart,
-        products
-      );
-      setCartDetail({ cartQuantity, totalCartCost });
-      return newCart;
-    });
-  };
+  const removeProductFromCart = useCallback(
+    (productId) => {
+      const newCart = removeFromCart(cart, productId);
+      setCart(newCart);
+    },
+    [cart]
+  );
+
+  const { cartQuantity, totalCartCost } = calculateCartDetails(cart, products);
 
   return (
     <>
       <div className="top">
-        <Header cartDetail={cartDetail} />
+        <Header cartQuantity={cartQuantity} totalCartCost={totalCartCost} />
         <SubHeader subHeaderCategories={subHeaderCategories} />
       </div>
       <main className="main">

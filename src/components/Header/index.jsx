@@ -6,7 +6,7 @@ import { memo } from "react";
 import SearchBar from "./SearchBar";
 import PropTypes from "prop-types";
 
-const Header = ({ cartDetail }) => {
+const Header = ({ cartQuantity, totalCartCost }) => {
   return (
     <header className="header">
       <Logo />
@@ -14,23 +14,23 @@ const Header = ({ cartDetail }) => {
       <SearchBar />
       <div className="header--right">
         <div className="login--button">Login</div>
-        <Cart cartDetail={cartDetail} />
+        <Cart cartQuantity={cartQuantity} totalCartCost={totalCartCost} />
       </div>
     </header>
   );
 };
 
-Header.propTypes = {
-  cartDetail: PropTypes.shape({
-    cartQuantity: PropTypes.number,
-    totalCartCost: PropTypes.number,
-  }),
-};
+// Header.propTypes = {
+//   cartDetail: PropTypes.shape({
+//     cartQuantity: PropTypes.number,
+//     totalCartCost: PropTypes.number,
+//   }),
+// };
 
-Header.defaultProps = {
-  cartDetail: {
-    cartQuantity: 0,
-    totalCartCost: 0,
-  },
-};
+// Header.defaultProps = {
+//   cartDetail: {
+//     cartQuantity: 0,
+//     totalCartCost: 0,
+//   },
+// };
 export default memo(Header);

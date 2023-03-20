@@ -3,8 +3,7 @@ import cartIcon from "../../../assets/images/cart.svg";
 import "./Cart.style.css";
 import PropTypes from "prop-types";
 
-const Cart = ({ cartDetail }) => {
-  const { cartQuantity, totalCartCost } = cartDetail;
+const Cart = ({ cartQuantity, totalCartCost }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
