@@ -10,6 +10,11 @@ export const productsLoaded = (products) => ({
   payload: products,
 });
 
+export const productsOrderChange = (order) => ({
+  type: ActionType.PRODUCTS_ORDER_CHANGE,
+  payload: order,
+});
+
 /* Action Creators for Side Nav Categories */
 export const sideNavCategoriesLoading = () => ({
   type: ActionType.SIDE_NAV_CATEGORIES_LOADING,

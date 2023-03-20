@@ -2,10 +2,10 @@ import SideNavItem from "./SideNavItem";
 import "./SideNavBar.style.css";
 import { memo } from "react";
 import { useSelector } from "react-redux";
-import { selectSideNavCategoriesIds } from "../../state/reducers/sideNavCategoriesReducer";
+import { selectSideNavCategoryIds } from "../../state/reducers/sideNavCategoriesReducer";
 
 const SideNavBar = () => {
-  const categoryIds = useSelector(selectSideNavCategoriesIds);
+  const categoryIds = useSelector(selectSideNavCategoryIds);
 
   return (
     <div className="side__nav">

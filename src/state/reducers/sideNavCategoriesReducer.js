@@ -39,24 +39,24 @@ export default function sideNavCategoriesReducer(state = initialState, action) {
   }
 }
 
-const selectSideNavCategoriesEntities = (state) =>
+const selectSideNavCategoryEntities = (state) =>
   state.sideNavCategories.entities;
 
 export const selectSideNavCategories = createSelector(
   // input selector
-  selectSideNavCategoriesEntities,
+  selectSideNavCategoryEntities,
   // output selector
   (entities) => Object.values(entities)
 );
 
-export const selectSideNavCategoriesIds = createSelector(
+export const selectSideNavCategoryIds = createSelector(
   selectSideNavCategories,
   (sideNavCategories) =>
     sideNavCategories.map((sideNavCategory) => sideNavCategory.categoryId)
 );
 
 export const selectSideNavCategoryById = (state, categoryId) => {
-  return selectSideNavCategoriesEntities(state)[categoryId];
+  return selectSideNavCategoryEntities(state)[categoryId];
 };
 
 export const selectCurrentSideNavCategoryId = (state) => {

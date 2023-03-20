@@ -54,3 +54,9 @@ export const applicationData = [
 
 export const BlinkitAddress =
   "© Blink Commerce Private Limited (formerly known as Grofers India Private Limited), 2016-2023";
+
+export const SORTING_ORDER = {
+  RELEVANCE: "Relevance",
+  LOWEST_PRICE: "Lowest Price",
+  HIGHEST_PRICE: "Highest Price",
+};

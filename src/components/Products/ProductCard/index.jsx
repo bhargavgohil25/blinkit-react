@@ -56,9 +56,9 @@ const ProductCard = ({ productId }) => {
         </div>
         <div className="product__add">
           {productCount === 0 ? (
-            <div className="add_btn" onClick={handleAddClick}>
+            <button className="add_btn" onClick={handleAddClick}>
               ADD
-            </div>
+            </button>
           ) : (
             <div className="product_added">
               <button className="icon minus" onClick={handleRemoveClick}>

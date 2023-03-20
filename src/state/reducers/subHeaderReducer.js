@@ -35,12 +35,12 @@ export default function subHeaderCategoriesReducer(
   }
 }
 
-const selectSubHeaderCategoriesEntities = (state) =>
+const selectSubHeaderCategoryEntities = (state) =>
   state.subHeaderCategories.entities;
 
 export const selectSubHeaderCategories = createSelector(
   // input selector
-  selectSubHeaderCategoriesEntities,
+  selectSubHeaderCategoryEntities,
   // output selector
   (entities) => Object.values(entities)
 );

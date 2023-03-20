@@ -4,7 +4,6 @@ import Delivery from "./Delivery";
 import Cart from "./Cart";
 import { memo } from "react";
 import SearchBar from "./SearchBar";
-import PropTypes from "prop-types";
 
 const Header = () => {
   return (
