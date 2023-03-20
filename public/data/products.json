@@ -1,0 +1,202 @@
+{
+  "products": [
+    {
+      "productId": 1,
+      "productName": "Cheese",
+      "actualPrice": 10,
+      "discountedPrice": 8,
+      "discount": 20,
+      "imgSrc": "./images/cheese.avif",
+      "offPercentage": null,
+      "quantity": "1kg",
+      "categoryId": "DAIRY_PRODUCTS"
+    },
+    {
+      "productId": 2,
+      "productName": "Milk",
+      "actualPrice": 20,
+      "discountedPrice": 18,
+      "discount": 10,
+      "imgSrc": "./images/milk.avif",
+      "offPercentage": 10,
+      "quantity": "1L",
+      "categoryId": "DAIRY_PRODUCTS"
+    },
+    {
+      "productId": 3,
+      "productName": "Butter",
+      "actualPrice": 30,
+      "discountedPrice": 28,
+      "discount": 6,
+      "imgSrc": "./images/butter.avif",
+      "offPercentage": 6,
+      "quantity": "250gm",
+      "categoryId": "DAIRY_PRODUCTS"
+    },
+    {
+      "productId": 4,
+      "productName": "Yogurt",
+      "actualPrice": 40,
+      "discountedPrice": 38,
+      "discount": 5,
+      "imgSrc": "./images/yogurt.avif",
+      "offPercentage": 5,
+      "quantity": "1kg",
+      "categoryId": "DAIRY_PRODUCTS"
+    },
+    {
+      "productId": 5,
+      "productName": "Paneer",
+      "actualPrice": 50,
+      "discountedPrice": 48,
+      "discount": 4,
+      "imgSrc": "./images/paneer.avif",
+      "offPercentage": 4,
+      "quantity": "1kg",
+      "categoryId": "DAIRY_PRODUCTS"
+    },
+    {
+      "productId": 6,
+      "productName": "Tofu",
+      "actualPrice": 60,
+      "discountedPrice": 58,
+      "discount": 3,
+      "imgSrc": "./images/tofu.avif",
+      "offPercentage": 3,
+      "quantity": "1kg",
+      "categoryId": "DAIRY_PRODUCTS"
+    },
+    {
+      "productId": 7,
+      "productName": "Coca Cola",
+      "actualPrice": 10,
+      "discountedPrice": 8,
+      "discount": 20,
+      "imgSrc": "./images/coke.avif",
+      "offPercentage": 20,
+      "quantity": "1L",
+      "categoryId": "COLD_DRINKS"
+    },
+    {
+      "productId": 8,
+      "productName": "Pepsi",
+      "actualPrice": 20,
+      "discountedPrice": 18,
+      "discount": 10,
+      "imgSrc": "./images/pepsi.avif",
+      "offPercentage": 10,
+      "quantity": "1L",
+      "categoryId": "COLD_DRINKS"
+    },
+    {
+      "productId": 9,
+      "productName": "Fanta",
+      "actualPrice": 30,
+      "discountedPrice": 28,
+      "discount": 6,
+      "imgSrc": "./images/fanta.avif",
+      "offPercentage": 6,
+      "quantity": "1L",
+      "categoryId": "COLD_DRINKS"
+    },
+    {
+      "productId": 10,
+      "productName": "Sprite",
+      "actualPrice": 40,
+      "discountedPrice": 38,
+      "discount": 5,
+      "imgSrc": "./images/sprite.avif",
+      "offPercentage": 5,
+      "quantity": "1L",
+      "categoryId": "COLD_DRINKS"
+    },
+    {
+      "productId": 11,
+      "productName": "Thums Up",
+      "actualPrice": 50,
+      "discountedPrice": 48,
+      "discount": 4,
+      "imgSrc": "./images/thumbs-up.avif",
+      "offPercentage": 4,
+      "quantity": "1L",
+      "categoryId": "COLD_DRINKS"
+    },
+    {
+      "productId": 12,
+      "productName": "Mirinda",
+      "actualPrice": 60,
+      "discountedPrice": 58,
+      "discount": 3,
+      "imgSrc": "./images/mirinda.avif",
+      "offPercentage": 3,
+      "quantity": "1L",
+      "categoryId": "COLD_DRINKS"
+    },
+    {
+      "productId": 13,
+      "productName": "Apple",
+      "actualPrice": 10,
+      "discountedPrice": 8,
+      "discount": 20,
+      "imgSrc": "./images/apples.avif",
+      "offPercentage": 20,
+      "quantity": "1kg",
+      "categoryId": "FRESH_FRUITS"
+    },
+    {
+      "productId": 14,
+      "productName": "Banana",
+      "actualPrice": 20,
+      "discountedPrice": 18,
+      "discount": 10,
+      "imgSrc": "./images/banana.avif",
+      "offPercentage": 10,
+      "quantity": "1kg",
+      "categoryId": "FRESH_FRUITS"
+    },
+    {
+      "productId": 15,
+      "productName": "Grapes",
+      "actualPrice": 30,
+      "discountedPrice": 28,
+      "discount": 6,
+      "imgSrc": "./images/grapes.avif",
+      "offPercentage": 6,
+      "quantity": "1kg",
+      "categoryId": "FRESH_FRUITS"
+    },
+    {
+      "productId": 16,
+      "productName": "Pears Beauty",
+      "actualPrice": 40,
+      "discountedPrice": 38,
+      "discount": 5,
+      "imgSrc": "./images/pear.avif",
+      "offPercentage": 5,
+      "quantity": "1kg",
+      "categoryId": "FRESH_FRUITS"
+    },
+    {
+      "productId": 17,
+      "productName": "Orange",
+      "actualPrice": 50,
+      "discountedPrice": 48,
+      "discount": 4,
+      "imgSrc": "./images/oranges.avif",
+      "offPercentage": 4,
+      "quantity": "1kg",
+      "categoryId": "FRESH_FRUITS"
+    },
+    {
+      "productId": 18,
+      "productName": "Water Melons",
+      "actualPrice": 60,
+      "discountedPrice": 58,
+      "discount": 3,
+      "imgSrc": "./images/melons.avif",
+      "offPercentage": 3,
+      "quantity": "1kg",
+      "categoryId": "FRESH_FRUITS"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  justify-content: center;
+  margin-top: 15rem;
+  height: 100%;
+}
+
+.product_container {
+  display: flex;
+  height: 80rem;
+  width: 110rem;
+  border-left: 0.1rem solid var(--border-color);
+  border-bottom: 0.1rem solid var(--border-color);
+  border-right: 0.1rem solid var(--border-color);
+}
