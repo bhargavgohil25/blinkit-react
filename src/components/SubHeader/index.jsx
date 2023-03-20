@@ -1,7 +1,7 @@
 import { memo } from "react";
 import "./SubHeader.style.css";
 import { useSelector } from "react-redux";
-import { selectSubHeaderCategories } from "../../state/reducers/subHeaderReducer";
+import { selectSubHeaderCategories } from "../../state/reducers/selectors/subHeaderCategories";
 
 const SubHeader = () => {
   const subHeaderCategories = useSelector(selectSubHeaderCategories);

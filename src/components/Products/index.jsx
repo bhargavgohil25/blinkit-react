@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import {
   selectCurrentSideNavCategoryId,
   selectSideNavCategoryById,
-} from "../../state/reducers/sideNavCategoriesReducer";
+} from "../../state/reducers/selectors/sideNavCategories";
 import { SORTING_ORDER } from "../../assets/constants.js";
-import { selectCurrentOrder } from "../../state/reducers/productsReducer";
+import { selectCurrentOrder } from "../../state/reducers/selectors/products";
 import { useActions } from "../../hooks/useActions";
 
 const Products = () => {

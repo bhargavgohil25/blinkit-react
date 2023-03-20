@@ -1,4 +1,4 @@
-import ActionType from "../action-types";
+import ACTION_TYPE from "../action-types";
 
 const initialState = {};
 
@@ -15,7 +15,7 @@ const initialState = {};
 
 export default function cartsReducer(state = initialState, action) {
   switch (action.type) {
-    case ActionType.PRODUCT_ADDED_TO_CART: {
+    case ACTION_TYPE.PRODUCT_ADDED_TO_CART: {
       const productId = action.payload;
       if (state[productId]) {
         return {
@@ -33,7 +33,7 @@ export default function cartsReducer(state = initialState, action) {
         };
       }
     }
-    case ActionType.PRODUCT_REMOVED_FROM_CART: {
+    case ACTION_TYPE.PRODUCT_REMOVED_FROM_CART: {
       const productId = action.payload;
       if (state[productId]) {
         if (state[productId].productCount > 1) {
@@ -56,30 +56,3 @@ export default function cartsReducer(state = initialState, action) {
       return state;
   }
 }
-
-// select total cost of the cart
-export const selectCartTotalCost = (state) => {
-  const products = state.products.entities;
-  const cart = state.carts;
-  let totalCost = 0;
-  for (const productId in cart) {
-    totalCost +=
-      products[productId].discountedPrice * cart[productId].productCount;
-  }
-  return totalCost;
-};
-
-// select total number of products in the cart
-export const selectCartTotalProductCount = (state) => {
-  const cart = state.carts;
-  let totalProductCount = 0;
-  for (const productId in cart) {
-    totalProductCount += cart[productId].productCount;
-  }
-  return totalProductCount;
-};
-
-// select product count
-export const selectProductCount = (state, productId) => {
-  return state.carts[productId]?.productCount || 0;
-};

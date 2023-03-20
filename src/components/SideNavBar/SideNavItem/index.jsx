@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import {
   selectCurrentSideNavCategoryId,
   selectSideNavCategoryById,
-} from "../../../state/reducers/sideNavCategoriesReducer";
+} from "../../../state/reducers/selectors/sideNavCategories";
 import { useActions } from "../../../hooks/useActions";
 
 const SideNavItem = ({ categoryId }) => {
@@ -16,11 +16,11 @@ const SideNavItem = ({ categoryId }) => {
     selectCurrentSideNavCategoryId(state)
   );
 
-  const { sideNavCurrentCategoryChanged } = useActions();
+  const { changeSideNavCategory } = useActions();
 
   const handleClick = useCallback(
-    () => sideNavCurrentCategoryChanged(categoryId),
-    [sideNavCurrentCategoryChanged, categoryId]
+    () => changeSideNavCategory(categoryId),
+    [changeSideNavCategory, categoryId]
   );
 
   return (

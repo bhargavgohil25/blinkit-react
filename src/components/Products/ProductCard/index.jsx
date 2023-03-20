@@ -4,9 +4,9 @@ import sourceAtIcon from "../../../assets/images/sourced-icon.webp";
 import "./ProductCard.style.css";
 import PropTypes from "prop-types";
 import { useCallback } from "react";
-import { selectProductById } from "../../../state/reducers/productsReducer";
+import { selectProductById } from "../../../state/reducers/selectors/products";
 import { useSelector } from "react-redux";
-import { selectProductCount } from "../../../state/reducers/cartsReducer";
+import { selectProductCount } from "../../../state/reducers/selectors/carts";
 import { useActions } from "../../../hooks/useActions";
 
 const ProductCard = ({ productId }) => {

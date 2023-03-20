@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import {
   selectCartTotalCost,
   selectCartTotalProductCount,
-} from "../../../state/reducers/cartsReducer";
+} from "../../../state/reducers/selectors/carts";
 
 const Cart = () => {
   const totalCartCost = useSelector((state) => selectCartTotalCost(state));

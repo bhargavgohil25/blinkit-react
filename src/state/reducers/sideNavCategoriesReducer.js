@@ -1,5 +1,4 @@
-import { createSelector } from "reselect";
-import ActionType from "../action-types";
+import ACTION_TYPE from "../action-types";
 
 const initialState = {
   status: "idle",
@@ -9,7 +8,7 @@ const initialState = {
 
 export default function sideNavCategoriesReducer(state = initialState, action) {
   switch (action.type) {
-    case ActionType.SIDE_NAV_CATEGORIES_LOADED:
+    case ACTION_TYPE.SIDE_NAV_CATEGORIES_LOADED:
       const newSideNavCategories = {};
 
       action.payload.forEach((sideNavCategory) => {
@@ -22,13 +21,13 @@ export default function sideNavCategoriesReducer(state = initialState, action) {
         entities: newSideNavCategories,
       };
 
-    case ActionType.SIDE_NAV_CATEGORIES_LOADING:
+    case ACTION_TYPE.SIDE_NAV_CATEGORIES_LOADING:
       return {
         ...state,
         status: "loading",
       };
 
-    case ActionType.SIDE_NAV_CURRENT_CATEGORY_CHANGED:
+    case ACTION_TYPE.SIDE_NAV_CURRENT_CATEGORY_CHANGED:
       return {
         ...state,
         currentSideNavCategoryId: action.payload,
@@ -38,27 +37,3 @@ export default function sideNavCategoriesReducer(state = initialState, action) {
       return state;
   }
 }
-
-const selectSideNavCategoryEntities = (state) =>
-  state.sideNavCategories.entities;
-
-export const selectSideNavCategories = createSelector(
-  // input selector
-  selectSideNavCategoryEntities,
-  // output selector
-  (entities) => Object.values(entities)
-);
-
-export const selectSideNavCategoryIds = createSelector(
-  selectSideNavCategories,
-  (sideNavCategories) =>
-    sideNavCategories.map((sideNavCategory) => sideNavCategory.categoryId)
-);
-
-export const selectSideNavCategoryById = (state, categoryId) => {
-  return selectSideNavCategoryEntities(state)[categoryId];
-};
-
-export const selectCurrentSideNavCategoryId = (state) => {
-  return state.sideNavCategories.currentSideNavCategoryId;
-};

@@ -1,5 +1,4 @@
-import { createSelector } from "reselect";
-import ActionType from "../action-types";
+import ACTION_TYPE from "../action-types";
 
 const initialState = {
   status: "idle",
@@ -11,7 +10,7 @@ export default function subHeaderCategoriesReducer(
   action
 ) {
   switch (action.type) {
-    case ActionType.SUB_HEADER_CATEGORIES_LOADED: {
+    case ACTION_TYPE.SUB_HEADER_CATEGORIES_LOADED: {
       const newSubHeaderCategories = {};
       action.payload.forEach((category) => {
         newSubHeaderCategories[category.categoryId] = category;
@@ -23,7 +22,7 @@ export default function subHeaderCategoriesReducer(
         entities: newSubHeaderCategories,
       };
     }
-    case ActionType.SUB_HEADER_CATEGORIES_LOADING: {
+    case ACTION_TYPE.SUB_HEADER_CATEGORIES_LOADING: {
       return {
         ...state,
         status: "loading",
@@ -34,13 +33,3 @@ export default function subHeaderCategoriesReducer(
       return state;
   }
 }
-
-const selectSubHeaderCategoryEntities = (state) =>
-  state.subHeaderCategories.entities;
-
-export const selectSubHeaderCategories = createSelector(
-  // input selector
-  selectSubHeaderCategoryEntities,
-  // output selector
-  (entities) => Object.values(entities)
-);

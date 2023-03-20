@@ -1,8 +1,8 @@
 import ProductCard from "../ProductCard";
 import "./ProductsGrid.style.css";
 import { useSelector } from "react-redux";
-import { selectProductsIdByCategoryId } from "../../../state/reducers/productsReducer";
-import { selectCurrentSideNavCategoryId } from "../../../state/reducers/sideNavCategoriesReducer";
+import { selectProductsIdByCategoryId } from "../../../state/reducers/selectors/products";
+import { selectCurrentSideNavCategoryId } from "../../../state/reducers/selectors/sideNavCategories";
 
 const ProductsGrid = () => {
   const currentCategoryId = useSelector((state) =>
