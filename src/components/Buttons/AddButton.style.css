@@ -1,0 +1,53 @@
+.product_added {
+  display: flex;
+  height: 3.6rem;
+  width: 9rem;
+  border-radius: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-green);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 530;
+  user-select: none;
+}
+
+.add_btn {
+  display: flex;
+  height: 3.6rem;
+  width: 9rem;
+  border-radius: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-light-green);
+  border: 0.098rem solid var(--primary-green);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  user-select: none;
+}
+
+.add_btn:hover,
+.product_added:hover {
+  box-shadow: 0 0 11px rgba(57, 61, 56, 0.2);
+}
+
+.icon {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.icon img {
+  height: 1.3rem;
+  overflow: hidden;
+  object-fit: cover;
+}

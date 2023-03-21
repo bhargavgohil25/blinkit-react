@@ -1,0 +1,29 @@
+.cart__item {
+  display: flex;
+  flex-direction: row;
+  height: 13rem;
+  width: 100%;
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.full_width {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
+.item__img {
+  display: flex;
+  flex: 1 1 15%;
+  border: 0.1rem solid var(--border-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.item__img img {
+  height: 10rem;
+  width: auto;
+  overflow: hidden;
+  object-fit: cover;
+}

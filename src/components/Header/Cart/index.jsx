@@ -8,14 +8,12 @@ import {
 } from "../../../state/reducers/selectors/carts";
 
 const Cart = () => {
-  const totalCartCost = useSelector((state) => selectCartTotalCost(state));
-  const cartQuantity = useSelector((state) =>
-    selectCartTotalProductCount(state)
-  );
+  const totalCartCost = useSelector(selectCartTotalCost);
+  const cartQuantity = useSelector(selectCartTotalProductCount);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/checkout");
+    if (cartQuantity > 0) navigate("/checkout");
   };
 
   return (

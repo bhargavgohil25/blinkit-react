@@ -1,5 +1,3 @@
-import minusIcon from "../../../assets/images/minus-3108.svg";
-import plusIcon from "../../../assets/images/plus-3107.svg";
 import sourceAtIcon from "../../../assets/images/sourced-icon.webp";
 import "./ProductCard.style.css";
 import PropTypes from "prop-types";
@@ -8,6 +6,7 @@ import { selectProductById } from "../../../state/reducers/selectors/products";
 import { useSelector } from "react-redux";
 import { selectProductCount } from "../../../state/reducers/selectors/carts";
 import { useActions } from "../../../hooks/useActions";
+import AddButton from "../../Buttons/AddButton";
 
 const ProductCard = ({ productId }) => {
   const product = useSelector((state) => selectProductById(state, productId));
@@ -55,21 +54,11 @@ const ProductCard = ({ productId }) => {
           <div className="actual__cost">₹{actualPrice}</div>
         </div>
         <div className="product__add">
-          {productCount === 0 ? (
-            <button className="add_btn" onClick={handleAddClick}>
-              ADD
-            </button>
-          ) : (
-            <div className="product_added">
-              <button className="icon minus" onClick={handleRemoveClick}>
-                <img src={minusIcon} alt="minus-icon" />
-              </button>
-              <div className="product-quantity">{productCount}</div>
-              <button className="icon plus" onClick={handleAddClick}>
-                <img src={plusIcon} alt="plus-icon" />
-              </button>
-            </div>
-          )}
+          <AddButton
+            productCount={productCount}
+            handleAddClick={handleAddClick}
+            handleRemoveClick={handleRemoveClick}
+          />
         </div>
       </div>
     </div>

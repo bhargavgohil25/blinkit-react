@@ -1,0 +1,19 @@
+.checkout__heading {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2.5rem;
+  font-weight: 600;
+  height: 5rem;
+}
+
+.checkout__delivery {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(37, 37, 37);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--subtitle-black);
+  font-size: 1.4rem;
+  font-weight: 400;
+}

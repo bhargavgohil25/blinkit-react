@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
 import { SORTING_ORDER } from "../../../assets/constants";
 
-const selectProductEntities = (state) => state.products.entities;
+export const selectProductEntities = (state) => state.products.entities;
 
 export const selectProducts = createSelector(
   // input selectors
