@@ -4,7 +4,7 @@ import { selectProductsInCart } from "../../state/reducers/selectors/carts";
 import CartItem from "./CartItem";
 
 const CheckoutCartItems = () => {
-  const productIds = useSelector((state) => selectProductsInCart(state));
+  const productIds = useSelector(selectProductsInCart);
 
   return (
     <div className="cart__items">

@@ -1,21 +1,21 @@
 import "./App.css";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/checkout",
-    element: <Checkout />,
-  },
-]);
+import { Route, Switch } from "react-router-dom";
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
+        </Route>
+      </Switch>
+    </>
+  );
 };
 
 export default App;

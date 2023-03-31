@@ -1,10 +1,10 @@
 import "./CheckoutDetail.style.css";
-const CheckoutDetails = ({ cartTotal, totalDiscount, totalOriginal }) => {
+const CheckoutDetails = ({ cartTotalCost, totalDiscount, totalOriginalCost }) => {
   return (
     <div className="checkout_details">
       <div className="detail">
         <span>MRP</span>
-        <span>₹{totalOriginal}</span>
+        <span>₹{totalOriginalCost}</span>
       </div>
       <div className="detail">
         <span>Product Discount</span>
@@ -16,7 +16,7 @@ const CheckoutDetails = ({ cartTotal, totalDiscount, totalOriginal }) => {
       </div>
       <div className="total">
         <span>Grand Total</span>
-        <span>₹{cartTotal}</span>
+        <span>₹{cartTotalCost}</span>
       </div>
     </div>
   );

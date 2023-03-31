@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import cartIcon from "../../../assets/images/cart.svg";
 import "./Cart.style.css";
 import { useSelector } from "react-redux";
@@ -10,10 +10,12 @@ import {
 const Cart = () => {
   const totalCartCost = useSelector(selectCartTotalCost);
   const cartQuantity = useSelector(selectCartTotalProductCount);
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const handleClick = () => {
-    if (cartQuantity > 0) navigate("/checkout");
+    if (cartQuantity > 0) {
+      history.push("/checkout");
+    }
   };
 
   return (

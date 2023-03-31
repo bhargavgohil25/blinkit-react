@@ -72,15 +72,6 @@ export const selectCartTotalProductCount = createSelector(
   }
 );
 
-// export const selectCartTotalProductCount = (state) => {
-//   const cart = state.carts;
-//   let totalProductCount = 0;
-//   for (const productId in cart) {
-//     totalProductCount += cart[productId].productCount;
-//   }
-//   return totalProductCount;
-// };
-
 // select product count
 export const selectProductCount = (state, productId) => {
   return state.carts[productId]?.productCount || 0;
