@@ -5,7 +5,7 @@ import { selectSubHeaderCategories } from "../../state/reducers/selectors/subHea
 
 const SubHeader = () => {
   const subHeaderCategories = useSelector(selectSubHeaderCategories);
-
+  // don't use inline functions
   return (
     <div className="sub-header">
       <div className="sub-header__category">
