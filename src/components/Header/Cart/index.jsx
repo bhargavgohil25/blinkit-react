@@ -14,7 +14,7 @@ const Cart = () => {
 
   const handleClick = () => {
     if (cartQuantity > 0) {
-      history.push("/checkout");
+      history.push("/blinkit-react/checkout");
     }
   };
 
