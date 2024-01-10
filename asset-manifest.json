@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blinkit-react/static/css/main.94595723.css",
-    "main.js": "/blinkit-react/static/js/main.91c993bf.js",
+    "main.js": "/blinkit-react/static/js/main.36312a06.js",
     "static/media/sourced-icon.webp": "/blinkit-react/static/media/sourced-icon.b5c6c63787ee34abbc5a.webp",
     "static/media/Blinkit.svg": "/blinkit-react/static/media/Blinkit.9256b492e86d445c14b303dcfd2c0bd8.svg",
     "static/media/cart.svg": "/blinkit-react/static/media/cart.17106140d51769c23b552ab0b2e6eff9.svg",
@@ -11,10 +11,10 @@
     "index.html": "/blinkit-react/index.html",
     "static/media/search-icon.svg": "/blinkit-react/static/media/search-icon.bd196af7a144987bd3e5d0fbd3efbce3.svg",
     "main.94595723.css.map": "/blinkit-react/static/css/main.94595723.css.map",
-    "main.91c993bf.js.map": "/blinkit-react/static/js/main.91c993bf.js.map"
+    "main.36312a06.js.map": "/blinkit-react/static/js/main.36312a06.js.map"
   },
   "entrypoints": [
     "static/css/main.94595723.css",
-    "static/js/main.91c993bf.js"
+    "static/js/main.36312a06.js"
   ]
 }
