@@ -1,0 +1,19 @@
+{
+  "sideNavCategories": [
+    {
+      "categoryId": "DAIRY_PRODUCTS",
+      "categoryName": "Dairy Products",
+      "categoryImg": "./images/dairy.webp"
+    },
+    {
+      "categoryId": "COLD_DRINKS",
+      "categoryName": "Cold Drinks",
+      "categoryImg": "./images/drinks.webp"
+    },
+    {
+      "categoryId": "FRESH_FRUITS",
+      "categoryName": "Fresh Fruits",
+      "categoryImg": "./images/fruits.webp"
+    }
+  ]
+}
